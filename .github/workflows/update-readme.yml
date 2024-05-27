@@ -39,4 +39,8 @@ jobs:
         git commit -am "auto update README.md"
     - name: Push changes
       run: |
+<<<<<<< HEAD
         git push
+=======
+        git push
+>>>>>>> 9c1299a15ba590567c3a27b8330abeedc0757468
