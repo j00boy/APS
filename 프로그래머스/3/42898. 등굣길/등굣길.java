@@ -33,8 +33,6 @@ class Solution {
             }
         }
         
-        int answer = D[n][m] % 1000000007;
-        
         // for(int r = 1; r <= n; r++) {
         //     for(int c = 1; c <= m; c++) {
         //         System.out.print(D[r][c] + " ");
@@ -42,6 +40,6 @@ class Solution {
         //     System.out.println();
         // }
         
-        return answer;
+        return D[n][m];
     }
 }
