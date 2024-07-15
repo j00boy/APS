@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -16,24 +15,28 @@ public class Main {
 		M = sc.nextInt();
 		N = sc.nextInt();
 		
-		map = new int[M + 1][N + 1];
-		D = new int[M + 1][N + 1];
+		map = new int[M][N];
+		D = new int[M][N];
 		max = 0;
 		
-		for(int r = 1; r <= M; r++) {
-			for(int c = 1; c <= N; c++) {
+		for(int r = 0; r < M; r++) {
+			for(int c = 0; c < N; c++) {
 				map[r][c] = sc.nextInt();
 			}
 		}
 
-		for(int r = 1; r <= M; r++) {
-			for(int c = 1; c <= N; c++) {
+		for(int r = 0; r < M; r++) {
+			for(int c = 0; c < N; c++) {
 				if(map[r][c] == 1) {
 					D[r][c] = 0;
 				} else if(map[r][c] == 2) {
 					D[r][c] = 0;
 				} else {
-					D[r][c] = Math.min(Math.min(D[r-1][c], D[r][c-1]) + 1, D[r-1][c-1] + 1);
+					if(r == 0) D[r][c] = 1;
+					else if(c == 0) D[r][c] = 1;
+					else {
+						D[r][c] = Math.min(Math.min(D[r-1][c], D[r][c-1]) + 1, D[r-1][c-1] + 1);
+					}
 					max = Math.max(max, D[r][c]);
 				}
 			}
